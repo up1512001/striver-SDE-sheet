@@ -18,6 +18,28 @@ int LCSarray(vector<int> &arr){
     return ans;
 }
 
+/*
+
+if (nums.size()==0) return 0;
+        map<int,int> mp;
+        for(int i=0;i<nums.size();i++)
+            mp[nums[i]]++;
+        
+        int j=0;
+        nums.clear();
+        for(auto it = mp.begin();it!=mp.end();it++){
+            nums.push_back(it->first);
+        }
+        int ans=INT_MIN,t=1;
+        for(int i=0;i<nums.size()-1;i++){
+            if((nums[i+1]-nums[i])==1) t++;
+            else{ans=max(ans,t);t=1;}
+            cout<<t<<" ";
+        };
+        return max(t,ans);
+
+*/
+
 int main(){
     cout<<"Enter size of array:";
     int n;cin>>n;
