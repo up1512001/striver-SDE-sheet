@@ -71,3 +71,32 @@ void p(vector<int> arr){
 };
 
 */
+
+/*
+// striver optimized code
+class Solution {
+public:
+    string getPermutation(int n, int k) {
+        vector<int> arr(n,0);
+        arr[n-1] = n;
+        int f=1;
+        for(int i=1;i<n;i++){
+            f*=i;
+            arr[i-1] = i;
+        }
+        k--;
+        string ret="";
+        while(1){
+            ret += to_string(arr[(k)/f]);
+            arr.erase(arr.begin() + (k/f));
+            if(arr.size()==0) {
+                break;
+            }
+            k %= f;
+            f /= arr.size();
+        }
+        return ret;
+    }
+};
+
+*/
